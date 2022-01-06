@@ -1,5 +1,8 @@
-name := "AOC2021"
+ThisBuild / version := "0.1.0-SNAPSHOT"
 
-version := "1.0"
+ThisBuild / scalaVersion := "3.1.0"
 
-scalaVersion := "3.1.0"
+lazy val root = (project in file("."))
+  .settings(
+    name := "AOC2021"
+  )

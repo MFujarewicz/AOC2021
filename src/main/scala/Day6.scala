@@ -1,5 +1,3 @@
-import scala.annotation.tailrec
-
 object Day6 extends App{
   val fishes = DataLoader(6).flatMap(_.split(',')).map(s => s.toInt)
 
