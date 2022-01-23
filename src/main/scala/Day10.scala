@@ -1,6 +1,5 @@
 import scala.annotation.tailrec
 import scala.collection.mutable
-import scala.collection.mutable.ArrayBuffer
 
 object Day10 extends App:
 
