@@ -1,5 +1,3 @@
-import jdk.incubator.vector.VectorShape
-
 object Day11 extends App {
   val data = DataLoader(11)
 
