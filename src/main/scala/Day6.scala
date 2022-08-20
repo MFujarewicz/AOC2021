@@ -34,7 +34,7 @@ object Day6 extends App{
         }
       }
     }
-  simulateLanternFishRec(fishMap, generations)
+    simulateLanternFishRec(fishMap, generations)
   }
 
 
