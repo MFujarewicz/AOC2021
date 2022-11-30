@@ -3,7 +3,7 @@ package aoc2021
 import toolbox.DataLoader
 
 object Day5 extends App {
-  val data = DataLoader(5)
+  val data = DataLoader(5, 2021)
 
   case class Line(x1: Int, y1: Int, x2: Int, y2: Int) {
     def allPoints = {

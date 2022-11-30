@@ -4,7 +4,7 @@ import toolbox.DataLoader
 
 object Day14 extends App {
 
-  val data = DataLoader(14)
+  val data = DataLoader(14, 2021)
   val recipe = data.drop(2).map({ case s"$pair -> $insertion" => pair -> insertion }).toMap
   val seed = data.head.sliding(2).toList.groupMapReduce(identity)(_ => 1l)(_ + _)
 

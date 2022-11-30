@@ -6,7 +6,7 @@ import scala.annotation.targetName
 import scala.io.Source.{fromFile, fromResource}
 
 object Day4 extends App {
-  val data: List[String] = DataLoader(4)
+  val data: List[String] = DataLoader(4, 2021)
 
   val bingoNumbers = data(0).split(",").map(_.toInt).toList
 

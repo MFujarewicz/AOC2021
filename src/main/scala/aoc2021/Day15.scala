@@ -4,7 +4,7 @@ import toolbox.DataLoader
 
 object Day15 extends App {
 
-  val data = DataLoader(15)
+  val data = DataLoader(15, 2021)
 
   class Graph(val riskVector: Vector[Vector[Int]]) {
 

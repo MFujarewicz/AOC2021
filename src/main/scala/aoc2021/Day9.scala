@@ -7,7 +7,7 @@ import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 
 object Day9 extends App:
-  val heightmap = Heightmap(DataLoader(9))
+  val heightmap = Heightmap(DataLoader(9, 2021))
   println(heightmap.riskLevelSum)
   val biggest3basinsMultiplied = heightmap.basinSizes.toList.sorted.reverse.take(3).product
   println(biggest3basinsMultiplied)

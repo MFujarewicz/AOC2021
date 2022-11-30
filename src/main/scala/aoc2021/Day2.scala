@@ -3,7 +3,7 @@ package aoc2021
 import toolbox.DataLoader
 
 object Day2 extends App {
-  val data = DataLoader(2)
+  val data = DataLoader(2, 2021)
   val xyTranslation = data.map {
     case s"forward $x" => (x.toInt, 0)
     case s"down $y" => (0, y.toInt)

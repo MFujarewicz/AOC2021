@@ -3,7 +3,7 @@ package aoc2021
 import toolbox.DataLoader
 
 object Day3 extends App {
-  val data: List[String] = DataLoader(3)
+  val data: List[String] = DataLoader(3, 2021)
 
   val characterCount = data.length
 

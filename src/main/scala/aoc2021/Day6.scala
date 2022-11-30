@@ -3,7 +3,7 @@ package aoc2021
 import toolbox.DataLoader
 
 object Day6 extends App {
-  val fishes = DataLoader(6).flatMap(_.split(',')).map(s => s.toInt)
+  val fishes = DataLoader(6, 2021).flatMap(_.split(',')).map(s => s.toInt)
 
   println(simulateLanternfish(fishes, 80).size)
   println(simulateLanternfishSmart(fishes, 256))

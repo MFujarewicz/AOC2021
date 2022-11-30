@@ -3,7 +3,7 @@ package aoc2021
 import toolbox.DataLoader
 
 object Day8 extends App {
-  val data = DataLoader(8)
+  val data = DataLoader(8, 2021)
 
   val sizeMap = Map(
     2 -> 1,

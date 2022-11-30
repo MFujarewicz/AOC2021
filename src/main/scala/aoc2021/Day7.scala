@@ -3,7 +3,7 @@ package aoc2021
 import toolbox.DataLoader
 
 object Day7 extends App {
-  val data = DataLoader(7)
+  val data = DataLoader(7, 2021)
   val positions = data.head.split(',').map(_.toInt)
 
   val targetPositions = (0 to 1000).toList

@@ -7,7 +7,7 @@ import scala.collection.mutable
 
 object Day10 extends App :
 
-  val input = DataLoader(10).map(stringToBracketList)
+  val input = DataLoader(10, 2021).map(stringToBracketList)
 
   val answer1 = input.flatMap(findCorrupted).map(_.corruptScore).sum
   println(answer1)
