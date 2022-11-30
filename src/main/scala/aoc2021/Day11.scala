@@ -1,3 +1,7 @@
+package aoc2021
+
+import toolbox.DataLoader
+
 object Day11 extends App {
   val data = DataLoader(11)
 
@@ -15,20 +19,23 @@ object Day11 extends App {
   }
 
 
-
-  case class Octopus(counter: Int, flashed: Boolean){
+  case class Octopus(counter: Int, flashed: Boolean) {
     override def toString: String = counter.toString
-    def increaseCounter: Octopus = Octopus(counter+1, flashed)
+
+    def increaseCounter: Octopus = Octopus(counter + 1, flashed)
+
     def setFlashed: Octopus = {
       flashCounter += 1
       Octopus(counter, true)
     }
+
     def setNotFlashed: Octopus = Octopus(counter, false)
+
     def zeroCounter: Octopus = Octopus(0, flashed)
   }
 
 
-  class Octopuses(state: Array[Array[Octopus]]){
+  class Octopuses(state: Array[Array[Octopus]]) {
 
     override def toString: String = {
       state.map(_.mkString(" ")).mkString("\n")
@@ -51,7 +58,6 @@ object Day11 extends App {
     }
 
 
-
     def increaseAllByOne = {
       for x <- state.head.indices; y <- state.indices do {
         state(x)(y) = state(x)(y).increaseCounter
@@ -71,18 +77,18 @@ object Day11 extends App {
     }
 
     def containsUnflashed = {
-      state.flatten.exists(o => o.counter>9 && !o.flashed)
+      state.flatten.exists(o => o.counter > 9 && !o.flashed)
     }
 
     private def flash: Unit = {
       while containsUnflashed do {
         for x <- state.head.indices; y <- state.indices do {
-          val octopus  = state(x)(y)
+          val octopus = state(x)(y)
           if octopus.counter > 9 && !octopus.flashed then {
             //set current status to flashed
             state(x)(y) = octopus.setFlashed
             //set neighours couters + 1
-            List((x+1, y), (x-1, y), (x, y+1), (x, y-1), (x+1, y+1), (x+1, y-1), (x-1, y+1), (x-1, y-1))
+            List((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1), (x + 1, y + 1), (x + 1, y - 1), (x - 1, y + 1), (x - 1, y - 1))
               .filter((x, y) => state.isDefinedAt(x) && state(x).isDefinedAt(y))
               .foreach((x, y) => state(x)(y) = state(x)(y).increaseCounter)
           }
@@ -90,7 +96,8 @@ object Day11 extends App {
       }
     }
   }
-  object Octopuses{
+
+  object Octopuses {
     def apply(data: List[String]): Octopuses = {
       val array = data.map(_.split("").map(value => Octopus(value.toInt, false))).toArray
       new Octopuses(array)

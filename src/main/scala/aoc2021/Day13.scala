@@ -1,10 +1,18 @@
+package aoc2021
+
+import toolbox.DataLoader
+
 object Day13 extends App {
   val data = DataLoader(13)
 
   case class Point(x: Int, y: Int)
+
   trait Axis
+
   case object X extends Axis
+
   case object Y extends Axis
+
   case class Fold(axis: Axis, coordinate: Int)
 
   val points = data.flatMap({
@@ -21,16 +29,17 @@ object Day13 extends App {
   })
 
 
-  def foldPaper(paper: List[Point], fold: Fold): List[Point] ={
+  def foldPaper(paper: List[Point], fold: Fold): List[Point] = {
     paper.map(point => fold match {
-      case Fold(X, coordinates) => Point(coordinates - math.abs(point.x-coordinates), point.y)
-      case Fold(Y, coordinates) => Point(point.x, coordinates - math.abs(point.y-coordinates))
+      case Fold(X, coordinates) => Point(coordinates - math.abs(point.x - coordinates), point.y)
+      case Fold(Y, coordinates) => Point(point.x, coordinates - math.abs(point.y - coordinates))
     }).distinct
   }
+
   val afterFold1 = foldPaper(points, folds.head)
   println(afterFold1.size)
 
-  val afterAllFolds = folds.foldLeft(points)(foldPaper)//:)
+  val afterAllFolds = folds.foldLeft(points)(foldPaper) //:)
 
   def showPaper(paper: List[Point]): Unit = {
     val MAX_X = paper.map(_.x).max

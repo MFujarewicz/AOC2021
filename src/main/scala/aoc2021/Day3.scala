@@ -1,4 +1,6 @@
-import scala.io.Source.{fromFile, fromResource}
+package aoc2021
+
+import toolbox.DataLoader
 
 object Day3 extends App {
   val data: List[String] = DataLoader(3)
@@ -9,18 +11,18 @@ object Day3 extends App {
     a.zipWithIndex.map(x => x._1 + b(x._2))
   }).map(s => s.count(_.equals('1')))
 
-  val gamma = a.map(i => if i > characterCount/2 then 1 else 0)
-  val epsilon = gamma.map(x => (x+1)%2)
+  val gamma = a.map(i => if i > characterCount / 2 then 1 else 0)
+  val epsilon = gamma.map(x => (x + 1) % 2)
 
-  def toDecimal(list: List[Int]):Int = {
-      list.reverse.zipWithIndex.map(a => a._1 * math.pow(2, a._2).toInt).sum
+  def toDecimal(list: List[Int]): Int = {
+    list.reverse.zipWithIndex.map(a => a._1 * math.pow(2, a._2).toInt).sum
   }
 
-  def toDecimal(list: String):Int = {
+  def toDecimal(list: String): Int = {
     toDecimal(list.map(c => c.toString.toInt).toList)
   }
 
-  println(toDecimal(gamma)*toDecimal(epsilon))
+  println(toDecimal(gamma) * toDecimal(epsilon))
 
   //part 2
   def filterMostCommon(data: List[String]) = {
@@ -31,8 +33,7 @@ object Day3 extends App {
 
   def filterLeastCommon(data: List[String]) = {
     val firstBitOccurrencesCount = data.map(_.head).groupMapReduce(identity)(_ => 1)(_ + _).withDefault(_ => 0)
-    val leastCommonFirstBit = if firstBitOccurrencesCount('1') == firstBitOccurrencesCount('0') then '0' else
-      if firstBitOccurrencesCount('0') < firstBitOccurrencesCount('1') then '0' else '1'
+    val leastCommonFirstBit = if firstBitOccurrencesCount('1') == firstBitOccurrencesCount('0') then '0' else if firstBitOccurrencesCount('0') < firstBitOccurrencesCount('1') then '0' else '1'
     data.filter(_.head == leastCommonFirstBit)
   }
 

@@ -1,3 +1,7 @@
+package aoc2021
+
+import toolbox.DataLoader
+
 object Day15 extends App {
 
   val data = DataLoader(15)
@@ -89,4 +93,3 @@ object Day15 extends App {
 
 
 }
-

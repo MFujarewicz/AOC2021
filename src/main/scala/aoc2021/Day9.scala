@@ -1,3 +1,7 @@
+package aoc2021
+
+import toolbox.DataLoader
+
 import scala.annotation.{tailrec, targetName}
 import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer

@@ -1,4 +1,8 @@
-object Day5 extends App{
+package aoc2021
+
+import toolbox.DataLoader
+
+object Day5 extends App {
   val data = DataLoader(5)
 
   case class Line(x1: Int, y1: Int, x2: Int, y2: Int) {
@@ -10,7 +14,7 @@ object Day5 extends App{
   }
 
   def countIntersections(lines: List[Line]) = {
-    lines.flatMap(_.allPoints).groupMapReduce(identity)(_ => 1)(_+_).values.count(_>1)
+    lines.flatMap(_.allPoints).groupMapReduce(identity)(_ => 1)(_ + _).values.count(_ > 1)
   }
 
   val lines = data.map({

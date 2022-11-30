@@ -1,5 +1,7 @@
+package toolbox
+
 import scala.io.Source
-import scala.util.{Failure, Success, Try, Using}
+import scala.util.Using
 
 object DataLoader {
   def apply(day: Int) = {

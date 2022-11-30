@@ -1,3 +1,7 @@
+package aoc2021
+
+import toolbox.DataLoader
+
 import scala.annotation.targetName
 import scala.io.Source.{fromFile, fromResource}
 

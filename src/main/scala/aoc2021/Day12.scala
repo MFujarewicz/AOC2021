@@ -1,3 +1,7 @@
+package aoc2021
+
+import toolbox.DataLoader
+
 object Day12 extends App {
   val data = DataLoader(12)
 
@@ -12,14 +16,14 @@ object Day12 extends App {
 
   println(allPaths.length)
 
-  def generatePaths(connections: Map[String, List[String]], start: String, end: String):List[List[String]] = {
+  def generatePaths(connections: Map[String, List[String]], start: String, end: String): List[List[String]] = {
 
     def containsTwoVisitsToSmallCave(path: List[String]): Boolean = {
-      path.filter(s => s == s.toLowerCase).groupMapReduce(s => s)(_ => 1)(_+_).values.exists(_>1)
+      path.filter(s => s == s.toLowerCase).groupMapReduce(s => s)(_ => 1)(_ + _).values.exists(_ > 1)
     }
 
-    def generatePathsRec(prefixes: List[List[String]]):List[List[String]] = {
-      val finishedPaths = prefixes.filter(_.last ==  end)
+    def generatePathsRec(prefixes: List[List[String]]): List[List[String]] = {
+      val finishedPaths = prefixes.filter(_.last == end)
       val unfinishedPats = prefixes.filter(_.last != end)
 
       val longerPaths = unfinishedPats.flatMap(prefix => {
@@ -31,9 +35,10 @@ object Day12 extends App {
 
         possibleNext.map(s => prefix :+ s)
       })
-      val newPrefixes = finishedPaths++longerPaths
+      val newPrefixes = finishedPaths ++ longerPaths
       if newPrefixes == prefixes then prefixes else generatePathsRec(newPrefixes)
     }
+
     generatePathsRec(List(List(start)))
   }
 

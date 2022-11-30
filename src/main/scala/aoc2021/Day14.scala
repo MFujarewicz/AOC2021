@@ -1,3 +1,7 @@
+package aoc2021
+
+import toolbox.DataLoader
+
 object Day14 extends App {
 
   val data = DataLoader(14)
@@ -21,4 +25,3 @@ object Day14 extends App {
     counts.max - counts.min
   }
 }
-
