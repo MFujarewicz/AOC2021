@@ -52,8 +52,6 @@ import toolbox.DataLoader
 
   val instructions = movesData.map(MoveInstruction.fromString)
 
-  println(startingStacks)
-
   val finalStacks = instructions.foldLeft(startingStacks)((stacks, instruction) => stacks.move(instruction))
   val finalStacks2 = instructions.foldLeft(startingStacks)((stacks, instruction) => stacks.moveAll(instruction))
 
