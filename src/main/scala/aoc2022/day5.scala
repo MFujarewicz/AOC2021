@@ -1,9 +1,10 @@
 package aoc2022
+
 import toolbox.DataLoader
 
 @main def day5(): Unit = {
 
-    val data: List[String] = DataLoader(5, 2022, useTestData = false)
+  val data: List[String] = DataLoader(5, 2022, useTestData = false)
 
   case class Stacks(stack: List[List[Char]]) {
 
@@ -30,9 +31,10 @@ import toolbox.DataLoader
 
   case class MoveInstruction(amount: Int, from: Int, to: Int)
 
-  object MoveInstruction{
-    def fromString(s: String) = { s match
-      case s"move $amount from $from to $to" => MoveInstruction(amount.toInt, from.toInt-1, to.toInt-1)
+  object MoveInstruction {
+    def fromString(s: String) = {
+      s match
+        case s"move $amount from $from to $to" => MoveInstruction(amount.toInt, from.toInt - 1, to.toInt - 1)
     }
   }
 
@@ -44,7 +46,7 @@ import toolbox.DataLoader
   val width = stackNumbers.head.filter(!_.isWhitespace).last.toString.toInt
 
   val stacks = for {x <- 0 until width}
-    yield for {y <- 0 until height }
+    yield for {y <- 0 until height}
       yield startData(y)(x * 4 + 1)
 
 
