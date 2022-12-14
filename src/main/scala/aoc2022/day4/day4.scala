@@ -1,4 +1,4 @@
-package aoc2022
+package aoc2022.day4
 
 import toolbox.DataLoader
 

@@ -1,4 +1,4 @@
-package aoc2022
+package aoc2022.day7
 
 import toolbox.DataLoader
 import scala.collection.mutable.ListBuffer

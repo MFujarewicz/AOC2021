@@ -1,4 +1,4 @@
-package aoc2022
+package aoc2022.day6
 
 import scala.util.control.Breaks._
 import toolbox.DataLoader
