@@ -1,4 +1,4 @@
-package aoc2024.day1
+package aoc2024
 
 import toolbox.DataLoader
 
