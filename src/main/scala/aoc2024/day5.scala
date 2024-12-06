@@ -13,7 +13,7 @@ case class Rule(left: Int, right: Int) {
 }
 
 @main def day4(): Unit = {
-  val input = DataLoader(4, 2024, useTestData = false)
+  val input = DataLoader(5, 2024, useTestData = false)
 
   val rules = input.filter(_.contains("|")).map{
     case s"$left|$right" => Rule(left.toInt, right.toInt)
