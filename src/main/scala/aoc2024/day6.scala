@@ -77,7 +77,7 @@ enum Direction:
 
 class Field(var visited: Boolean, var isObstacle: Boolean, var pastDirections: Set[Direction] = Set.empty)
 
-@main def day5(): Unit = {
+@main def day6(): Unit = {
   val input = DataLoader(6, 2024, useTestData = false)
 
   def newMapFromInput = {

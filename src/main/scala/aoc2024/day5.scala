@@ -12,7 +12,7 @@ case class Rule(left: Int, right: Int) {
   }
 }
 
-@main def day4(): Unit = {
+@main def day5(): Unit = {
   val input = DataLoader(5, 2024, useTestData = false)
 
   val rules = input.filter(_.contains("|")).map{
