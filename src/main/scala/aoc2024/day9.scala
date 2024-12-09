@@ -86,7 +86,7 @@ case object Empty extends Block {
       val block = disk(r) match
         case file:File if !file.moved => {
 
-          val availableIndex = disk.mkString("").indexOf("."*file.size)
+          val availableIndex = disk.mkString("").indexOf("."*file.size)//xd
 //          println(availableIndex)
           if availableIndex != -1 && availableIndex < r-file.size +1  then {
 
