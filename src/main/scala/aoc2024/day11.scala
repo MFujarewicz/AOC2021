@@ -4,7 +4,6 @@ import toolbox.DataLoader
 
 import scala.collection.mutable
 import scala.collection.parallel.CollectionConverters._
-//import cats.implicits._
 
 
 @main def day11(): Unit = {
