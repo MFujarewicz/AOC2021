@@ -78,8 +78,4 @@ object day5 extends App {
   println(s"min: $min")
 
 
-
-
-
-
 }
