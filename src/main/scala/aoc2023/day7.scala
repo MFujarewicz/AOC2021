@@ -23,12 +23,7 @@ object day7 extends App {
   val cardPower2 = List('A', 'K', 'Q', 'T', '9', '8', '7', '6', '5', '4', '3', '2', 'J').reverse.zipWithIndex.toMap
 
   case class Handbid(hand: String, bid: Int) {
-
-    val c1 = hand(0)
-    val c2 = hand(1)
-    val c3 = hand(2)
-    val c4 = hand(3)
-    val c5 = hand(4)
+    
 
     val counts = hand.toList.groupBy(identity).view.mapValues(_.size).values.toList
 

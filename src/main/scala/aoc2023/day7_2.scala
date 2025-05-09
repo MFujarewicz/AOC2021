@@ -22,12 +22,6 @@ object day7_2 extends App {
 
   case class Handbid(hand: String, bid: Int) {
 
-    val c1 = hand(0)
-    val c2 = hand(1)
-    val c3 = hand(2)
-    val c4 = hand(3)
-    val c5 = hand(4)
-
     val jokerCount = hand.count(_ == 'J')
 
     val counts = hand.toList.groupBy(identity).view.mapValues(_.size).values.toList
@@ -92,7 +86,7 @@ object day7_2 extends App {
 //  sorted.foreach(println)
 
   var result1 = sorted.map{case (hb, rank) => hb.bid*rank}.sum
-  println(s"result 1 = $result1")
+  println(s"result 2 = $result1")
 
 
 }
